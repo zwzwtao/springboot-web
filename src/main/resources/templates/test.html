@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>test</title>
+</head>
+<body>
+<!-- 所有的html元素都可以被thymeleaf替换接管: th:元素名 -->
+<div th:text="${msg}"></div>
+<!-- 如果加一个utext，则表示将文本里都html标签识别出来，用都其实不多就是了 -->
+<div th:utext="${msg}"></div>
+
+<hr>
+
+<!-- thymeleaf的遍历语法 -->
+<h3 th:each="user:${users}" th:text="${user}"></h3>
+<!-- 第二种遍历方法，不过不推荐 -->
+<h3 th:each="user:${users}">[[ ${user} ]]</h3>
+
+</body>
+</html>
